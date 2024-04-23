@@ -2,15 +2,17 @@ const { PrismaClient } = require("@prisma/client");
 
 const database = new PrismaClient();
 
+//connected with /components/categories.tsx
 async function main() {
   try {
     await database.category.createMany({
       data: [
-        { name: "Comp science" },
-        { name: "Health and wellness" },
+        { name: "Computer science" },
         { name: "Fitness" },
+        { name: "Photography" },
         { name: "Accounting" },
         { name: "Engineering" },
+        { name: "Filming" },
       ],
     });
     console.log("success");
